@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //db connection
 
-mongoose.connect(dbUrl, { useNewUrlParser: true, useFindAndModify: false });
+mongoose.connect(dbUrl, { useNewUrlParser: true, useFindAndModify: false ,useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true);
 const db = mongoose.connection;
