@@ -1,0 +1,100 @@
+{
+    "product": [{
+            "_id":1,
+            "English_Name": "antinal",
+            "Arabic_name": "انتينال",
+            "scientific_name": "scientific_name",
+            "category": "للاسهال ومطهر معوي",
+            "price": "10.5",
+            "company": "امون",
+            "avilable": true,
+
+            "photo": "./image/user.png"
+        },
+        {
+            "_id":2,
+            "English_Name": "bi-alcofan",
+            "Arabic_name": "باي الكوفان",
+            "scientific_name": "كيتوبروفين",
+            "category": "للصداع",
+            "price": "8.25",
+            "company": "النيل",
+            "avilable": false,
+
+            "photo": "./image/user.png"
+        },
+        {
+            "_id":3,
+            "English_Name": "Hestazine",
+            "Arabic_name": "هستازين شراب",
+            "scientific_name": "scientific_name",
+            "category": "للحساسيه",
+            "price": "15",
+            "company": "company",
+            "avilable": false,
+
+            "photo": "./image/user.png"
+        },
+        {
+            "_id":4,
+            "English_Name": "dixy",
+            "Arabic_name": "ديكسي",
+            "scientific_name": "scientific_name",
+            "category": "سرنجه شرب",
+            "price": "2.5",
+            "company": "company",
+            "avilable": false,
+
+            "photo": "./image/user.png"
+        },
+        {   
+            "_id":5,
+            "English_Name": "antinal",
+            "Arabic_name": "انتينال",
+            "scientific_name": "scientific_name",
+            "category": "للاسهال ومطهر معوي",
+            "price": "10.5",
+            "company": "امون",
+            "avilable": true,
+
+            "photo": "./image/user.png"
+        },
+        {
+            "_id":6,
+            "English_Name": "bi-alcofan",
+            "Arabic_name": "باي الكوفان",
+            "scientific_name": "كيتوبروفين",
+            "category": "للصداع",
+            "price": "8.25",
+            "company": "النيل",
+            "avilable": false,
+
+            "photo": "./image/user.png"
+        },
+        {
+            "_id":7,
+            "English_Name": "Hestazine",
+            "Arabic_name": "هستازين شراب",
+            "scientific_name": "scientific_name",
+            "category": "للحساسيه",
+            "price": "15",
+            "company": "company",
+            "avilable": false,
+
+            "photo": "./image/user.png"
+        },
+        {
+            "_id":8,
+            "English_Name": "dixy",
+            "Arabic_name": "ديكسي",
+            "scientific_name": "scientific_name",
+            "category": "سرنجه شرب",
+            "price": "2.5",
+            "company": "company",
+            "avilable": false,
+
+            "photo": "./image/user.png"
+        }
+    ]
+
+}

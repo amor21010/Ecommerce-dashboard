@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>All orders</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style5.css">
+    <link rel="stylesheet" href="./css/mdb.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <script src="./js/knockout.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>E -Commerce Pharmacy</h3>
+                </div>
+    
+                <ul class="list-unstyled components">
+                    <p>Sections</p>
+                    <li class="active">
+                        <a href="#ProductsSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Products</a>
+                        <ul class="collapse list-unstyled" id="ProductsSubmenu">
+                            <li>
+                                <a  data-toggle="modal"
+                                data-target="#exampleModalCenter">Add new</a>
+                            </li>
+                            <li>
+                                <a href="/product">Edit product</a>
+                            </li>
+                          
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="/order" >Orders</a>
+                       
+                    </li>
+                    <li class="active">
+                        <a href="user">Costumers</a>
+    
+                    </li>
+                    <p>Mange</p>
+    
+                    <li class="active">
+                        <a href="/emp/">user</a>
+                    </li>
+             
+                    <li>
+                        <a href="/emp/logout/" class="text btn-danger">logout</a>
+                   </li>
+                </ul>
+    
+            </nav>
+    
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg " id="nav">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div style="margin:0 0 0 30%">
+                            <a href="/home">
+                                <h6 style="font: 25px bold ;color: rgb(255, 255, 255);">E commarce Pharmacy</h6>
+                            </a>
+                        </div>
+
+                        <form class="form-inline nav navbar-nav ml-auto">
+
+                            <label for="Search_input">Search</label>
+                            <input type="search" class="form-control" id="Search_input" placeholder="Search"
+                                onkeyup="return search()" style="margin: 5px">
+                            <div class="dropdown">
+                                <a class="btn btn-info dropdown-toggle" href="#" role="button"
+                                    id="productsearchMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" style="margin: 5px">
+                                    Products
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="productsearchMenuLink">
+                                    <a class="dropdown-item" href="#">by name</a>
+                                    <a class="dropdown-item" href="#">by sci-name </a>
+
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+
+                <ul class="row" id="order_list" data-bind="foreach:order">
+                    <li class="col-4">
+                        <a data-bind="attr:{href:' /order/'+_id}">
+                            <div class="card mb-6" id="cards">
+                                <div class="row no-gutters">
+
+                                    <div class="col-sm">
+                                        <div class="card-body">
+                                            <div>
+                                                <h5 class="card-title" data-bind="text:owner.fullName">Card title</h5>
+                                            </div>
+                                            <p class="card-text inline" style="text-align: right ;display: inline;">
+                                                <small class="text-muted">Total price : </small>
+                                            </p>
+                                            <p class="card-text" data-bind="text:totalPrice" style="display: inline;">
+                                                Last updated 3 mins ago
+                                            </p>
+                                            <p class="card-text" style="text-align: right ;display: inline;"><small
+                                                    class="text-muted">L.E</small>
+                                            </p>
+                                            <p class="card-text"  data-bind="text:'last update '+time">
+                                                ....
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="./js/order.java.js"></script>
+
+
+
+
+
+
+    <script type="text/javascript" src="./viewModels/orderVM.js"></script>
+
+</body>
+
+</html>

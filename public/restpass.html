@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="discription" content="Pharmacy e-commerce app c-Panel">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style-rest.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <title>rest password</title>
+</head>
+
+<body>
+
+    <div class="hd">
+        <h1>E-Pharmacy app panel</h1>
+    </div>
+
+    <div class="back"></div>
+
+    <div class="bd">
+        <div class="wellcome">
+            <img src="./image/user.png" alt="anonymous user">
+            <h1>Foget password</h1>
+
+        </div>
+        <form id="restform" action="http://localhost:8080/sendpass" method="POST">
+            <span class="user">User Name
+                <input type="text" placeholder=" user Name" id="username" name="name">
+            </span>
+            <span class="email">E-Mail
+                <input type="email" placeholder=" email" id="email" name="email">
+            </span>
+
+            <input type="submit" class="rest">
+        </form>
+        <span class="loggin">Back to <a href="http://localhost:8080/loggin">Login</a></span>
+        <footer>All copyrights reserved <a href="http://globaldevgate.com">GDG</a> <a href="http://globaldevgate.com">Contact Us</a></footer>
+        
+        <script src="..//C Panel/js/reserpass.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+{
+    "env": {
+        "JWT_KEY": "ecommercepharm001150",
+        "baseUrl":"http://testandroidomar.ddns.net:8088",
+        "fee"    :20
+    }
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>All products</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style5.css">
+    <link rel="stylesheet" href="./css/mdb.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <script src="./js/knockout.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>E -Commerce Pharmacy</h3>
+                </div>
+    
+                <ul class="list-unstyled components">
+                    <p>Sections</p>
+                    <li class="active">
+                        <a href="#ProductsSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Products</a>
+                        <ul class="collapse list-unstyled" id="ProductsSubmenu">
+                            <li>
+                                <a  data-toggle="modal"
+                                data-target="#exampleModalCenter">Add new</a>
+                            </li>
+                            <li>
+                                <a href="/product">Edit product</a>
+                            </li>
+                          
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="/order" >Orders</a>
+                       
+                    </li>
+                    <li class="active">
+                        <a href="user">Costumers</a>
+    
+                    </li>
+                    <p>Mange</p>
+    
+                    <li class="active">
+                        <a href="/emp/">user</a>
+                    </li>
+                
+                    <li>
+                        <a href="/emp/logout/" class="text btn-danger">logout</a>
+                   </li>
+                </ul>
+    
+            </nav>
+    
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg " id="nav">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <div style="margin:0 0 0 30%">
+                            <a href="/home">
+                                <h6 style="font: 25px bold ;color: rgb(255, 255, 255);">E commarce Pharmacy</h6>
+                            </a>
+                        </div>
+
+                        <form class="form-inline nav navbar-nav ml-auto">
+
+
+                            <label for="Search_input">Search</label>
+                            <input type="search" class="form-control" id="Search_input" placeholder="Search"
+                                onkeyup="return search()" style="margin: 5px">
+                            <div class="dropdown">
+                                <a class="btn btn-info dropdown-toggle" href="#" role="button"
+                                    id="productsearchMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" style="margin: 5px">
+                                    Products
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="productsearchMenuLink">
+                                    <a class="dropdown-item" href="#">by name</a>
+                                    <a class="dropdown-item" href="#">by sci-name </a>
+
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger navbar-btn" data-toggle="modal"
+                    data-target="#exampleModalCenter" style="left: 45%;">
+                    + Add new
+                </button>
+                <div >
+                    <ul class="row" id="products" data-bind="foreach:product">
+                        <li class="col-4">
+                            <a data-bind="attr:{href:'/product/'+ _id}">
+                                <div class="card mb-6" id="cards">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img class="card-img" alt="..." data-bind="attr:{src:photo}"
+                                                style="margin: 7px;max-height: 120px">
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="card-body">
+                                                <h5 class="card-title" data-bind="text:English_Name">Card title</h5>
+                                                <small class="avilableQantaty"  data-bind="text:'in Stock : '+avilableQantaty">
+                                                    </small>
+                                                <p class="card-text">
+                                                    <small data-bind="text:Arabic_Name"
+                                                        class="text-muted" style="text-align: right">Last
+                                                        updated 3 mins ago</small>
+                                                </p>
+                                                
+                                            
+                                                <p class="card-text"> <small data-bind="text:price + ' L.E'"
+                                                        class="text-muted">Last
+                                                        updated 3 mins ago</small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/product/create/api"method="POST"  style="margin: 20px">
+                    <div class="modal-body" >
+
+                        <div class="form-row">
+                                <div class="input-group number-spinner row"  style="margin: 0 15% 0 20% ">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" data-dir="dwn"><span
+                                                    class="glyphicon glyphicon-minus">-</span></button>
+                                        </span>
+    
+                                        <input type="text" id="avilableQantaty" class="form-control text-center"
+                                    
+                                            name="avilableQantaty">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" data-dir="up"><span
+                                                    class="glyphicon glyphicon-plus">+</span></button>
+                                        </span>
+                                    </div>
+                            <div class=" form-group col " style="margin:20px 20%">
+                   
+
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="EnglishName">English Name</label>
+                                <input type="text" class="form-control" name="English_Name" id="EnglishName">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ArabicName">Arabic Name</label>
+                                <input type="text" class="form-control" name="Arabic_Name" id="ArabicName">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group  col-md-6">
+                                <label for="SciName">Sci-Name</label>
+                                <input type="text" class="form-control" name="sci_Name" id="SciName">
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="Company">Company</label>
+                                <input type="text" class="form-control" name="Company" id="Company">
+                            </div>
+                        </div>
+                        <div class="form-row" >
+                            <div class="form-group col-md-6" >
+                                <label for="category">category</label>
+                                <select id="category" name="category" 
+                                    class="form-control" data-bind="foreach:categorys">
+                                  
+                                        <option data-bind="text:_id"></option>
+                                 
+                                 
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="price">price</label>
+                                <input type="text" class="form-control" id="price" name="price">
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" >Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+    <script src="./js/products.js"></script>
+
+
+
+
+
+    <script type="text/javascript" src="./viewModels/productsVM.js"></script>
+
+</body>
+
+</html>

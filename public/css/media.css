@@ -1,0 +1,254 @@
+
+
+@media only screen and (max-width:1024px){
+    .l-head{
+        margin: 30px 20px;
+    }
+    .l-head img{
+      float: right;
+    }
+    .l-head div{
+        width: 100%;
+        margin:10px 0 ;
+    }
+    .l-head div h1{
+        font-size: 25px
+    }
+    .depart{
+        line-height: 25px;
+        font-size: 20px;
+    }
+    .depart lu li span {
+        float: right;
+        width: 85%;
+        text-align: right;
+        padding:  20px;
+        border: 1px hidden;
+        border-radius: 4px;
+    }
+    .depart lu li span i {
+        line-height: 25px;
+    }
+    .l-foot {
+        margin: 20px 10px;
+    }
+    .l-foot lu li  i{
+        font-size: 20px
+    }
+    .rt-container{
+        width: 90%
+    }
+    .big{
+        background-size: 120% 700px;
+        height: 1700px;
+    }
+    .row-1{
+        height: 600px
+    }
+    .row-1 h1{
+        padding: 50px 50px 0 50px
+    }
+    .row-1 p{
+    
+        padding:30px 
+    }
+    .row-1 span{
+        left: 30%;
+    }
+    .big-2{
+        height: 1100px;
+    }
+    .foot{
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .left-cont {
+        visibility: hidden;
+        z-index: 5;
+    }
+    .view{
+        visibility: hidden;
+    }
+
+    .hb{
+        visibility: visible;
+        background: rgb(48, 48, 48);
+        }
+    .hb:hover .left-cont{
+        visibility: visable;
+    }
+    .big ,.big-1,.big-2 {
+        width:780PX;
+        margin: 0 auto
+    }
+    .big{
+        background-size:  150% 800px;
+        height: 1800px;
+    }
+    .row-1{
+        height: 700PX;
+        width: 100%;
+    }
+    .row-1 span{
+        position: relative;
+        left:  230px;
+    }
+    .rt-container{
+        width: 90%;
+        padding: 0 10px;
+    }
+                    /*portfilo*/
+    .row-2{
+        height: 900px;
+    }
+
+    .row-2 div{
+        width: 27%;
+        margin: 20px;
+    }
+                    /*about*/
+    #about img{
+        width: 100%;
+    }
+    #about{
+        height: 900px;
+    }
+    .big-2 {
+        height: 1100px;
+    }
+    .foot{
+        width: 780px;
+        padding: 50px 0;
+        margin: 0 auto;
+        height: 20px
+    }
+}
+@media only screen and (max-width:651px){
+    .big ,.big-1,.big-2 {
+        width:645PX;
+        margin: 0 auto
+    }
+    .big{
+        background-size: 150% 900px; 
+        height: 4400px;
+    }
+    .rt-container{
+        width: 98%;
+        padding: 0 ;
+    }
+    .row-1{
+        height: 800px;
+    }
+    .row-1 span{
+        position: relative;
+        left:  200px;
+    }
+    .row-2 div {
+        width: 80%;
+        margin: 20px 10%;
+    }
+    .big-2 input{
+        width: 97%;
+        float:none;
+        margin: 20px 0;
+    }
+    .big-2 textarea{
+        width: 97%
+    }
+    .big-2 span{
+    left: 200PX;
+    }
+    .foot{
+        width: 650px
+    }
+
+}
+
+@media only screen and (max-width:426px) {
+    .big ,.big-1,.big-2 {
+        width:425PX;
+        margin: 0 auto
+    }
+    .row-1 h1{
+      padding: 50px 30px 0 30px;
+      font-size: 40px;
+    }
+    .row-1 {
+        height: 600px;
+    }
+    .row-1 p{
+        font-size: 22px;
+        padding: 30px;
+    }
+    .row-1 span{
+        left: 100px;
+    }
+    .big{
+        height: 3500px ;
+        background-size: 150% 700px;
+    }
+    .big-1{
+        height:900px ;
+    }
+    .big-2 {
+        height: 1300px;
+    }
+    .big-2 span{
+        left: 100px;
+    }
+    .foot{
+        width: 426px;
+    }
+}
+
+@media only screen and (max-height:426px){
+    .left-cont {
+        visibility: hidden;
+        z-index: 5;
+    }
+    .view{
+        visibility: hidden;
+    }
+
+    .hb{
+        visibility: visible;
+        background: rgb(48, 48, 48);
+        }
+    .hb:hover .left-cont{
+        visibility: visable;
+    }
+    .big ,.big-1,.big-2 {
+        width:100%;
+        margin: 0 auto
+    }
+    .row-1 h1{
+      padding: 50px 30px 0 30px;
+      font-size: 40px;
+    }
+    .row-1 p{
+        font-size: 22px;
+        padding: 30px;
+    }
+    .row-1 span{
+        left: 100px;
+    }
+    .big ,.big-1 ,.big-2{
+        height: max-content ;
+    }
+    .big-1{
+        height:900px ;
+    }
+    .big-2 {
+        height: 1100px;
+    }
+    .big-2 span{
+        left: 100px;
+    }
+    .foot{
+        width: 100%;
+        left: 0;
+        margin: 0
+    }
+}

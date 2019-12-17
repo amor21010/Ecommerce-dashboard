@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Order details</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style5.css">
+    <link rel="stylesheet" href="./css/mdb.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <script src="./js/knockout.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>E -Commerce Pharmacy</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Sections</p>
+                <li class="active">
+                    <a href="#ProductsSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Products</a>
+                    <ul class="collapse list-unstyled" id="ProductsSubmenu">
+                        <li>
+                            <a data-toggle="modal" data-target="#exampleModalCenter">Add new</a>
+                        </li>
+                        <li>
+                            <a href="/product">Edit product</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="/order">Orders</a>
+
+                </li>
+                <li class="active">
+                    <a href="user">Costumers</a>
+
+                </li>
+                <p>Mange</p>
+
+                <li class="active" selected>
+                    <a href="/emp/">user</a>
+                </li>
+                <li>
+                    <a href="/emp/logout/" class="text btn-danger">logout</a>
+                </li>
+            </ul>
+
+        </nav>
+
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg" id="nav">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div style="margin:0 0 0 30%">
+                            <a href="/home">
+                                <h6 style="font: 25px bold ;color: rgb(255, 255, 255);">E commarce Pharmacy</h6>
+                            </a>
+                        </div>
+
+                    </div>
+
+            </nav>
+
+
+            <div class="container">
+
+
+                <div class="card row" style=" padding:25px;margin: 5% ;background: rgba(93, 247, 221, 0.658);">
+                    <div class="card-body ">
+                        <h5 class="card-header" style="background:rgb(93, 247, 221) ">Owner name</h5>
+                        <div class="row">
+
+                            <div class="col" style="margin-top: 15%">
+
+                                <!-- <img src="./image/user.png" class="rounded card-img-top  d-flex justify-content-center"
+                                    style="margin:30px 20%;max-height: 200px;max-width: 200px"> -->
+                                <form style="margin: 10px" data-bind="foreach:emp" onsubmit="return save()">
+                                    <div class="form-row ">
+
+
+                                        <label for="_id">user Name</label>
+                                        <input type="text" class="form-control" name="_id" id="_id" data-bind="attr:{value:_id}">
+
+                                    </div>
+
+                                    <div class="form-row ">
+
+                                        <label for="password">new password</label>
+                                        <input type="password" class="form-control" name="password" id="password"
+                                            placeholder="new password">
+                                        </select>
+                                    </div>
+                                    <div class="form-row ">
+
+                                        <label for="comfirmpassword">comfirm password</label>
+                                        <input type="password" class="form-control" id="comfirmtpassword"
+                                            placeholder="comfirm password">
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <button type="submit" class="btn btn-primary col">save</button>
+                                        <button type="submit" class="btn btn-scondary col">cancel</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+
+
+
+                            <div class="col ">
+                                <h4 class="card-header" style="background: #5ee7dece ; margin-top: 20px"> Edit Other
+                                    users </h4>
+                                <div class="col card scrollbar scrollbar-pink  " id="scroll">
+                                    <ul calss="force-overflow" data-bind="foreach:emps"
+                                        style="margin:20px;padding: 0px">
+
+                                        <li id="pro_card">
+                                            <a data-bind="attr:{href:_id}">
+                                                <div class="card col" style="margin:10 70px">
+                                                    <span style="font: 20px bold" class="inline"
+                                                        data-bind="text:_id">name</span>
+
+                                            </a>
+                                        </li>
+
+                                </div>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+               
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="./viewModels/empVM.js"></script>
+
+<script type="text/javascript" src="js/profile.js"></script>
+
+</body>
+
+</html>

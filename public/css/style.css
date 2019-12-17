@@ -1,0 +1,139 @@
+body{
+    height: 680px;
+}
+.hd{
+    height: 50px;
+    background: #009688;
+    text-align: center;
+    color: antiquewhite;
+    line-height: 50px;
+    font-size: 24px;
+    box-shadow: 3px 10px 50px 5px rgba(0,0,0,0.35);
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+}
+.hd h1{
+    font-family:'Bitter';
+    
+}
+.bd{
+    height: 100%;
+    position: relative;
+    background:url("..//image/Back-login.jpg") ;
+    
+}
+.bd img{
+    height: 100px;
+    float: left;
+}
+.bd h1{
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 100px;
+    margin: 0 10px;
+    text-shadow: 4px 4px 5px rgba(0,0,0,0.18);
+}
+.back{
+    background: #70EFDE;
+    height: 400px;
+    width: 600px;
+    z-index: 1;
+    border: 1px hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 130px;
+    left: 30%;
+    box-shadow: 3px 10px 50px 5px rgba(0,0,0,0.38);
+}
+.wellcome{
+    position: absolute;
+    left: 33%;
+    top: 180px;
+    z-index: 2;
+}
+.bd span {
+    margin: 20px;
+   
+    
+}
+.user{
+    margin: 100px 0 0 0;
+    position: absolute;
+    top: 200px;
+    left: 40%;
+    z-index: 2;
+    font-size: 20px;
+    color: rgb(1, 80, 69)
+}
+.pass{
+    margin: 100px 0 0 0;
+    position: absolute;
+    top: 250px;
+    left: 40%;
+    z-index: 2;
+    font-size: 20px;
+    color: rgb(1, 80, 69)
+}
+
+
+.pass input,.user input{
+    width: 220px;
+    height: 22px;
+    line-height: 20px;
+    border: 1px rgba(168, 168, 168, 0.747) solid;
+    border-radius: 3px;
+    box-shadow: 3px 3px 15px 1px rgba(0,0,0,0.20);
+    padding: 3px 5px  ; 
+    position: absolute;
+    z-index: 2;
+    left: 150px;
+    top: 0px
+}
+.rest{
+    font-size: 20px;
+    position: absolute;
+    top: 380px;
+    left: 53%;
+    color: rgb(104, 103, 103);
+    z-index: 2;
+    font-size: 14px;
+    
+}
+
+.loggin{
+    background: rgb(255, 88, 59);
+    position: absolute;
+    top: 420px; 
+    left: 58%;
+    z-index: 2;
+    height: 35px;
+    line-height: 30px;
+    width: 100px;
+    text-align: center;
+    border: 1px hidden;
+    border-radius: 5px;
+    
+    box-shadow: 3px 3px 15px 1px rgba(0,0,0,0.20);
+    font-size: 20px;
+}
+.loggin a{
+    text-decoration: none;
+    color: antiquewhite
+}
+.loggin:hover{
+    background: #009688;
+    color: antiquewhite;    
+    transition-duration: 1s
+}
+footer{
+    height: 50px;
+    line-height: 50px;
+    background: black;
+    color: aliceblue;
+    text-align: center
+}
+footer a{
+    color: antiquewhite;    
+}
